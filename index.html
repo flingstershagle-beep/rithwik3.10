@@ -12,6 +12,7 @@
  
 <style> 
 *{box-sizing:border-box} 
+ 
 body{ 
 margin:0;padding:20px;background:#080615;color:white; 
 font-family:Arial,sans-serif; 
@@ -19,7 +20,9 @@ background-image:
 radial-gradient(ellipse at top left,#56158b55,transparent 45%), 
 radial-gradient(ellipse at bottom right,#006b9b55,transparent 45%); 
 } 
+ 
 .container{max-width:1000px;margin:auto} 
+ 
 .creator{ 
 display:flex;align-items:center;gap:20px;padding:20px; 
 border:2px solid #8535b9;border-radius:35px; 
@@ -27,17 +30,21 @@ background:#190d28cc;
 box-shadow:0 0 18px #a855f7,0 0 35px #7926b766; 
 margin-bottom:55px; 
 } 
+ 
 .logo{ 
 width:115px;height:115px;object-fit:cover; 
 border-radius:50%;border:4px solid #c05cff; 
 box-shadow:0 0 20px #b44cff; 
 } 
+ 
 .creator-info{flex:1;min-width:0} 
+ 
 .creator-title{ 
 font-size:clamp(14px,3vw,25px); 
 font-weight:bold;letter-spacing:2px; 
 color:#e4c9ff;margin-bottom:14px; 
 } 
+ 
 .instagram{ 
 display:block;width:fit-content;color:#d9aaff; 
 font-size:clamp(17px,4vw,28px); 
@@ -45,23 +52,29 @@ font-weight:bold;text-decoration:none;
 margin:9px 0;text-shadow:0 0 12px #c084fc; 
 overflow-wrap:anywhere; 
 } 
+ 
 .instagram:hover{color:white} 
 .ig-icon{font-size:38px;color:#d9aaff;text-decoration:none} 
  
 .hero{text-align:center;padding:25px 0 45px} 
 .hero h1{font-size:clamp(32px,6vw,55px);line-height:1.15} 
+ 
 .gradient{ 
 background:linear-gradient(90deg,#bd8aff,#39ddff,#ff73d9); 
 background-clip:text;color:transparent; 
 } 
+ 
 .hero p{color:#b8b1c9;line-height:1.8} 
+ 
 .search{ 
 width:100%;padding:17px;border:1px solid #8f62bd; 
 border-radius:18px;background:#ffffff0c;color:white; 
 font-size:15px;outline:none;margin-top:20px; 
 } 
+ 
 .search:focus{box-shadow:0 0 20px #a855f7} 
 .section-title{margin:35px 0 20px} 
+ 
 .category{ 
 width:100%;text-align:left;padding:23px;margin-bottom:15px; 
 border:2px solid var(--glow);border-radius:24px; 
@@ -70,60 +83,72 @@ color:white;cursor:pointer;
 box-shadow:0 0 12px var(--glow),inset 0 0 20px #ffffff08; 
 transition:.25s; 
 } 
+ 
 .category:hover{ 
 transform:translateY(-3px); 
 box-shadow:0 0 25px var(--glow),0 0 45px var(--glow); 
 } 
+ 
 .category h2{font-size:20px} 
 .category p{color:#b9b3c9} 
 .count{color:var(--glow);font-weight:bold;font-size:12px} 
+ 
 .panel{ 
 display:none;background:#171127;border:1px solid #8b52b9; 
 border-radius:17px;padding:10px;margin:-5px 0 18px; 
 box-shadow:0 0 18px #8b35bd55; 
 } 
+ 
 .panel.open{display:block} 
+ 
 .site{ 
 display:flex;justify-content:space-between;align-items:center; 
 gap:10px;padding:14px;border-radius:12px; 
 text-decoration:none;color:white; 
 border-bottom:1px solid #ffffff12; 
 } 
+ 
 .site:hover{background:#ffffff13;color:#d9aaff} 
 .site small{display:block;color:#aaa1ba;margin-top:5px} 
 .arrow{color:#d9aaff;font-size:20px} 
+ 
 .suggest{ 
 margin-top:45px;padding:22px;border:1px solid #a855f7; 
 border-radius:22px;background:#180e29; 
 box-shadow:0 0 20px #9333ea44; 
 } 
+ 
 .suggest h2{color:#e4c9ff} 
+ 
 .suggest input,.suggest textarea{ 
 width:100%;padding:14px;margin:8px 0; 
 border-radius:12px;border:1px solid #8155a5; 
 background:#ffffff0c;color:white;font-size:14px; 
 outline:none; 
 } 
+ 
 .suggest input:focus,.suggest textarea:focus{ 
 border-color:#c084fc; 
 box-shadow:0 0 10px #a855f744; 
 } 
+ 
 .suggest textarea{min-height:90px;resize:vertical} 
+ 
 .suggest button{ 
 padding:14px 22px;border:0;border-radius:12px; 
 background:linear-gradient(90deg,#a855f7,#18c8e8); 
 color:white;font-weight:bold;cursor:pointer; 
 width:100%; 
 } 
+ 
 .suggest button:disabled{opacity:.6;cursor:wait} 
 .note{font-size:12px;color:#b9a9c9;line-height:1.7} 
 #status{margin-top:15px;min-height:20px} 
+ 
 footer{text-align:center;padding:30px 0;color:#9c91ad;font-size:12px} 
 footer a{color:#d9aaff;text-decoration:none} 
  
-/* ================================= 
-   NEW FLOATING FEEDBACK SYSTEM 
-================================= */ 
+/* FLOATING FEEDBACK SYSTEM */ 
  
 .feedback-toggle{ 
 position:fixed; 
@@ -263,6 +288,34 @@ line-height:1.5;
 color:#b9a9c9; 
 } 
  
+/* RK MEDIA BACKGROUND MUSIC BUTTON */ 
+ 
+.music-toggle{ 
+position:fixed; 
+left:18px; 
+bottom:20px; 
+z-index:9997; 
+border:1px solid #d18bff; 
+border-radius:30px; 
+padding:13px 19px; 
+color:white; 
+font-size:14px; 
+font-weight:bold; 
+cursor:pointer; 
+background:linear-gradient(110deg,#8b35d1,#4a22a5,#087f9d); 
+box-shadow:0 0 15px #a855f7,0 0 30px #8b35bd66; 
+transition:.25s; 
+} 
+ 
+.music-toggle:hover{ 
+transform:translateY(-4px); 
+box-shadow:0 0 25px #c084fc; 
+} 
+ 
+.music-toggle.playing{ 
+background:linear-gradient(110deg,#087f9d,#8b35d1); 
+} 
+ 
 @media(max-width:550px){ 
 body{padding:12px} 
 .creator{gap:12px;padding:13px;border-radius:23px} 
@@ -281,6 +334,13 @@ body{padding:12px}
   right:12px; 
   bottom:72px; 
   width:calc(100vw - 24px); 
+} 
+ 
+.music-toggle{ 
+  left:12px; 
+  bottom:14px; 
+  padding:12px 15px; 
+  font-size:12px; 
 } 
 } 
 </style> 
@@ -581,7 +641,7 @@ Your suggestion will be sent to the website owner's email.
 </p> 
 </section> 
  
-<!-- NEW FLOATING FEEDBACK BUTTON --> 
+<!-- FLOATING FEEDBACK BUTTON --> 
 <button type="button" 
 class="feedback-toggle" 
 id="feedbackToggle" 
@@ -590,7 +650,7 @@ aria-controls="feedbackBox">
 ✉ Feedback 
 </button> 
  
-<!-- NEW FEEDBACK MESSAGE BOX --> 
+<!-- FEEDBACK MESSAGE BOX --> 
 <section class="feedback-box" 
 id="feedbackBox" 
 aria-label="Send feedback"> 
@@ -654,6 +714,18 @@ Your message will be sent to the RK MEDIA website owner.
 </form> 
 </section> 
  
+<!-- RK MEDIA AUDIO PLAYER --> 
+<audio id="rkMusic" preload="auto"> 
+  <source src="music.mp3" type="audio/mpeg"> 
+</audio> 
+ 
+<button type="button" 
+id="musicToggle" 
+class="music-toggle" 
+aria-label="Turn background music on or off"> 
+♫ MUSIC OFF 
+</button> 
+ 
 <footer> 
 © 2026 RK MEDIA USEFUL WEBSITES<br> 
 Created by 
@@ -667,6 +739,7 @@ target="_blank" rel="noopener noreferrer">@rk___efxr</a>
 </div> 
  
 <script> 
+ 
 /* CATEGORY OPEN / CLOSE */ 
 function toggle(button){ 
 const panel=button.nextElementSibling; 
@@ -770,9 +843,7 @@ submitButton.disabled=false;
 submitButton.textContent="SUBMIT SUGGESTION ↗"; 
 }); 
  
-/* ================================= 
-   NEW FEEDBACK BOX OPEN / CLOSE 
-================================= */ 
+/* FEEDBACK BOX OPEN / CLOSE */ 
  
 const feedbackToggle=document.getElementById("feedbackToggle"); 
 const feedbackBox=document.getElementById("feedbackBox"); 
@@ -862,6 +933,120 @@ feedbackSubmit.disabled=false;
 feedbackSubmit.textContent="SEND MESSAGE ↗"; 
  
 }); 
+ 
+/* ========================================= 
+   RK MEDIA BACKGROUND MUSIC PLAYER 
+   MP3 AUDIO ONLY - NO VIDEO 
+   START: 01:36 
+   END:   02:00 
+========================================= */ 
+ 
+const rkMusic=document.getElementById("rkMusic"); 
+const musicToggle=document.getElementById("musicToggle"); 
+ 
+const MUSIC_START=96; 
+const MUSIC_END=120; 
+ 
+let musicPlaying=false; 
+ 
+rkMusic.volume=0.7; 
+ 
+musicToggle.addEventListener("click",async function(){ 
+ 
+if(!musicPlaying){ 
+ 
+  try{ 
+ 
+   if(rkMusic.readyState===0){ 
+ 
+    await new Promise((resolve,reject)=>{ 
+ 
+     rkMusic.addEventListener( 
+      "loadedmetadata",resolve,{once:true} 
+     ); 
+ 
+     rkMusic.addEventListener( 
+      "error",reject,{once:true} 
+     ); 
+ 
+     rkMusic.load(); 
+ 
+    }); 
+ 
+   } 
+ 
+   if(rkMusic.duration<MUSIC_END){ 
+    throw new Error("Audio file is shorter than 02:00."); 
+   } 
+ 
+   if(rkMusic.currentTime<MUSIC_START || 
+      rkMusic.currentTime>=MUSIC_END){ 
+ 
+    rkMusic.currentTime=MUSIC_START; 
+ 
+   } 
+ 
+   await rkMusic.play(); 
+ 
+   musicPlaying=true; 
+   musicToggle.textContent="♫ MUSIC ON"; 
+   musicToggle.classList.add("playing"); 
+ 
+  }catch(error){ 
+ 
+   musicToggle.textContent="♫ PLAY FAILED"; 
+   console.error("RK Music Error:",error); 
+ 
+   alert( 
+    "Music could not play. Please check that music.mp3 is uploaded correctly." 
+   ); 
+ 
+  } 
+ 
+}else{ 
+ 
+  rkMusic.pause(); 
+  rkMusic.currentTime=MUSIC_START; 
+ 
+  musicPlaying=false; 
+  musicToggle.textContent="♫ MUSIC OFF"; 
+  musicToggle.classList.remove("playing"); 
+ 
+} 
+ 
+}); 
+ 
+/* LOOP AUDIO FROM 01:36 TO 02:00 */ 
+ 
+rkMusic.addEventListener("timeupdate",function(){ 
+ 
+if(musicPlaying && rkMusic.currentTime>=MUSIC_END){ 
+ 
+  rkMusic.currentTime=MUSIC_START; 
+ 
+} 
+ 
+}); 
+ 
+/* RESET BUTTON IF AUDIO ENDS OR FAILS */ 
+ 
+rkMusic.addEventListener("ended",function(){ 
+ 
+if(musicPlaying){ 
+  rkMusic.currentTime=MUSIC_START; 
+  rkMusic.play().catch(()=>{}); 
+} 
+ 
+}); 
+ 
+rkMusic.addEventListener("error",function(){ 
+ 
+musicPlaying=false; 
+musicToggle.textContent="♫ MUSIC OFF"; 
+musicToggle.classList.remove("playing"); 
+ 
+}); 
+ 
 </script> 
  
 </body> 
