@@ -121,12 +121,167 @@ width:100%;
 footer{text-align:center;padding:30px 0;color:#9c91ad;font-size:12px} 
 footer a{color:#d9aaff;text-decoration:none} 
  
+/* ================================= 
+   NEW FLOATING FEEDBACK SYSTEM 
+================================= */ 
+ 
+.feedback-toggle{ 
+position:fixed; 
+right:18px; 
+bottom:20px; 
+z-index:9998; 
+border:1px solid #d18bff; 
+border-radius:30px; 
+padding:13px 19px; 
+color:white; 
+font-size:14px; 
+font-weight:bold; 
+cursor:pointer; 
+background:linear-gradient(110deg,#8b35d1,#4a22a5,#087f9d); 
+box-shadow:0 0 15px #a855f7,0 0 30px #8b35bd66; 
+transition:.25s; 
+} 
+ 
+.feedback-toggle:hover{ 
+transform:translateY(-4px); 
+box-shadow:0 0 25px #c084fc,0 0 40px #8b35bd; 
+} 
+ 
+.feedback-box{ 
+display:none; 
+position:fixed; 
+right:18px; 
+bottom:82px; 
+width:min(350px,calc(100vw - 30px)); 
+z-index:9999; 
+padding:20px; 
+border:1px solid #b45cff; 
+border-radius:20px; 
+background:#160c26; 
+box-shadow:0 0 25px #a855f7aa,0 0 55px #7926b755; 
+animation:feedbackAppear .25s ease; 
+} 
+ 
+.feedback-box.open{display:block} 
+ 
+@keyframes feedbackAppear{ 
+from{opacity:0;transform:translateY(15px)} 
+to{opacity:1;transform:translateY(0)} 
+} 
+ 
+.feedback-header{ 
+display:flex; 
+justify-content:space-between; 
+align-items:center; 
+gap:10px; 
+margin-bottom:8px; 
+} 
+ 
+.feedback-header h3{ 
+color:#e4c9ff; 
+font-size:19px; 
+margin:0; 
+} 
+ 
+.feedback-close{ 
+background:#ffffff12; 
+color:white; 
+border:1px solid #ffffff22; 
+border-radius:50%; 
+width:30px; 
+height:30px; 
+font-size:18px; 
+cursor:pointer; 
+} 
+ 
+.feedback-description{ 
+color:#b9a9c9; 
+font-size:12px; 
+line-height:1.6; 
+margin-bottom:12px; 
+} 
+ 
+.feedback-box input, 
+.feedback-box select, 
+.feedback-box textarea{ 
+width:100%; 
+padding:12px; 
+margin:7px 0; 
+border-radius:10px; 
+border:1px solid #8155a5; 
+background:#ffffff0c; 
+color:white; 
+font-size:13px; 
+outline:none; 
+font-family:Arial,sans-serif; 
+} 
+ 
+.feedback-box select option{ 
+background:#171127; 
+color:white; 
+} 
+ 
+.feedback-box input:focus, 
+.feedback-box select:focus, 
+.feedback-box textarea:focus{ 
+border-color:#c084fc; 
+box-shadow:0 0 10px #a855f744; 
+} 
+ 
+.feedback-box textarea{ 
+min-height:105px; 
+resize:vertical; 
+} 
+ 
+.feedback-submit{ 
+width:100%; 
+padding:13px; 
+margin-top:8px; 
+border:0; 
+border-radius:11px; 
+background:linear-gradient(90deg,#a855f7,#18c8e8); 
+color:white; 
+font-weight:bold; 
+cursor:pointer; 
+transition:.2s; 
+} 
+ 
+.feedback-submit:hover{ 
+box-shadow:0 0 15px #a855f7; 
+} 
+ 
+.feedback-submit:disabled{ 
+opacity:.6; 
+cursor:wait; 
+} 
+ 
+#feedbackStatus{ 
+min-height:18px; 
+margin-top:10px; 
+font-size:12px; 
+line-height:1.5; 
+color:#b9a9c9; 
+} 
+ 
 @media(max-width:550px){ 
 body{padding:12px} 
 .creator{gap:12px;padding:13px;border-radius:23px} 
 .logo{width:76px;height:76px} 
 .ig-icon{font-size:26px} 
 .category{padding:19px} 
+ 
+.feedback-toggle{ 
+  right:12px; 
+  bottom:14px; 
+  padding:12px 16px; 
+  font-size:13px; 
+} 
+ 
+.feedback-box{ 
+  right:12px; 
+  bottom:72px; 
+  width:calc(100vw - 24px); 
+} 
 } 
 </style> 
 </head> 
@@ -426,6 +581,79 @@ Your suggestion will be sent to the website owner's email.
 </p> 
 </section> 
  
+<!-- NEW FLOATING FEEDBACK BUTTON --> 
+<button type="button" 
+class="feedback-toggle" 
+id="feedbackToggle" 
+aria-expanded="false" 
+aria-controls="feedbackBox"> 
+✉ Feedback 
+</button> 
+ 
+<!-- NEW FEEDBACK MESSAGE BOX --> 
+<section class="feedback-box" 
+id="feedbackBox" 
+aria-label="Send feedback"> 
+ 
+<div class="feedback-header"> 
+<h3>✦ Send Feedback</h3> 
+<button type="button" 
+class="feedback-close" 
+id="feedbackClose" 
+aria-label="Close feedback box">×</button> 
+</div> 
+ 
+<p class="feedback-description"> 
+Have a problem, suggestion or opinion? 
+Send us a message. We would love to hear from you! 
+</p> 
+ 
+<form id="feedbackForm" 
+action="https://formspree.io/f/mdeevero" 
+method="POST"> 
+ 
+<input type="text" 
+name="visitor_name" 
+placeholder="Your Name (Optional)" 
+maxlength="100"> 
+ 
+<select name="message_type" required> 
+<option value="" disabled selected>Select Message Type</option> 
+<option value="Website Problem">Report a Problem</option> 
+<option value="Website Suggestion">Website Suggestion</option> 
+<option value="General Feedback">General Feedback</option> 
+<option value="Other">Other Message</option> 
+</select> 
+ 
+<textarea name="visitor_message" 
+placeholder="Write your message here..." 
+required maxlength="3000"></textarea> 
+ 
+<input type="hidden" 
+name="_subject" 
+value="New Feedback Message - RK MEDIA"> 
+ 
+<input type="text" 
+name="_gotcha" 
+style="display:none" 
+tabindex="-1" 
+autocomplete="off"> 
+ 
+<button type="submit" 
+class="feedback-submit" 
+id="feedbackSubmit"> 
+SEND MESSAGE ↗ 
+</button> 
+ 
+<p id="feedbackStatus" 
+role="status" 
+aria-live="polite"> 
+Your message will be sent to the RK MEDIA website owner. 
+</p> 
+ 
+</form> 
+</section> 
+ 
 <footer> 
 © 2026 RK MEDIA USEFUL WEBSITES<br> 
 Created by 
@@ -540,6 +768,99 @@ try{
  
 submitButton.disabled=false; 
 submitButton.textContent="SUBMIT SUGGESTION ↗"; 
+}); 
+ 
+/* ================================= 
+   NEW FEEDBACK BOX OPEN / CLOSE 
+================================= */ 
+ 
+const feedbackToggle=document.getElementById("feedbackToggle"); 
+const feedbackBox=document.getElementById("feedbackBox"); 
+const feedbackClose=document.getElementById("feedbackClose"); 
+ 
+function closeFeedback(){ 
+feedbackBox.classList.remove("open"); 
+feedbackToggle.setAttribute("aria-expanded","false"); 
+} 
+ 
+feedbackToggle.addEventListener("click",function(){ 
+const isOpen=feedbackBox.classList.contains("open"); 
+ 
+if(isOpen){ 
+  closeFeedback(); 
+}else{ 
+  feedbackBox.classList.add("open"); 
+  feedbackToggle.setAttribute("aria-expanded","true"); 
+} 
+}); 
+ 
+feedbackClose.addEventListener("click",closeFeedback); 
+ 
+/* FEEDBACK FORM SUBMISSION */ 
+ 
+const feedbackForm=document.getElementById("feedbackForm"); 
+const feedbackStatus=document.getElementById("feedbackStatus"); 
+const feedbackSubmit=document.getElementById("feedbackSubmit"); 
+ 
+feedbackForm.addEventListener("submit",async function(event){ 
+ 
+event.preventDefault(); 
+ 
+if(!feedbackForm.reportValidity()) return; 
+ 
+feedbackSubmit.disabled=true; 
+feedbackSubmit.textContent="SENDING..."; 
+feedbackStatus.style.color="#b9a9c9"; 
+feedbackStatus.textContent="Please wait. Sending your message..."; 
+ 
+try{ 
+ 
+  const response=await fetch(feedbackForm.action,{ 
+   method:"POST", 
+   body:new FormData(feedbackForm), 
+   headers:{ 
+    "Accept":"application/json" 
+   } 
+  }); 
+ 
+  if(response.ok){ 
+ 
+   feedbackStatus.style.color="#55e6a5"; 
+   feedbackStatus.textContent= 
+    "✓ Your message was sent successfully! Thank you."; 
+ 
+   feedbackForm.reset(); 
+ 
+  }else{ 
+ 
+   let errorMessage="Message could not be sent. Please try again."; 
+ 
+   try{ 
+    const result=await response.json(); 
+ 
+    if(result.errors){ 
+     errorMessage=result.errors 
+      .map(error=>error.message).join(" "); 
+    } 
+ 
+   }catch(error){} 
+ 
+   feedbackStatus.style.color="#ff7777"; 
+   feedbackStatus.textContent="✕ "+errorMessage; 
+ 
+  } 
+ 
+}catch(error){ 
+ 
+  feedbackStatus.style.color="#ff7777"; 
+  feedbackStatus.textContent= 
+   "✕ Network error. Please check your internet and try again."; 
+ 
+} 
+ 
+feedbackSubmit.disabled=false; 
+feedbackSubmit.textContent="SEND MESSAGE ↗"; 
+ 
 }); 
 </script> 
  
