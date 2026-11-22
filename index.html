@@ -130,6 +130,19 @@ body{padding:12px}
 .category-reordering{overscroll-behavior:contain}.category.dragging{opacity:.65;outline:2px dashed var(--glow)}.group.drag-over{outline:2px solid var(--glow);border-radius:16px}\n.category:focus-visible,.category-lock:focus-visible{outline:2px solid #fff;outline-offset:4px}
 @media(max-width:600px){.category{padding-right:100px}.category-lock{top:10px;right:10px}.drag-handle{top:15px;right:55px}}
 
+
+/* Distinctive color treatment for every folder card */
+.category{background:linear-gradient(120deg,color-mix(in srgb,var(--glow) 23%,#151020),color-mix(in srgb,var(--glow) 8%,#100d19) 58%,#ffffff08);}
+.graphic-design-panel{padding:13px;background:linear-gradient(145deg,#21152f,#111522);border-color:#C084FC;box-shadow:0 0 22px #C084FC33;}
+.gd-subfolder{margin:0 0 10px;}
+.gd-subfolder:last-child{margin-bottom:0;}
+.gd-category{padding:17px 18px;margin-bottom:8px;border-radius:17px;border-width:1.5px;background:linear-gradient(115deg,color-mix(in srgb,var(--glow) 25%,#171321),color-mix(in srgb,var(--glow) 8%,#11101a) 72%);}
+.gd-category h2{font-size:17px;margin:2px 0 5px;}
+.gd-category p{font-size:13px;margin:4px 0;color:#d0c9dc;}
+.gd-category .count{font-size:11px;}
+.gd-links{margin:0 0 12px 12px;background:#100e19;border-color:color-mix(in srgb,var(--glow) 65%,#ffffff22);box-shadow:0 0 13px color-mix(in srgb,var(--glow) 25%,transparent);}
+.gd-links.open{display:block;}
+
 </style>
 </head>
 <body>
@@ -170,7 +183,7 @@ body{padding:12px}
 <a class="site" href="https://www.snapyt.app/" rel="noopener noreferrer" target="_blank"><span>SnapYT<small>snapyt.app</small></span><span class="arrow">↗</span></a>
 </div>
 </section><section class="group instagram-downloader-group">
-<button class="category" onclick="toggle(this)" style="--glow:#C6FF00" type="button">📸<h2>Instagram video downloader</h2><p>Download Instagram videos using these tools.</p><span class="count">04 WEBSITES · VIEW LIST</span></button>
+<button class="category" onclick="toggle(this)" style="--glow:#B8E62E" type="button">📸<h2>Instagram video downloader</h2><p>Download Instagram videos using these tools.</p><span class="count">04 WEBSITES · VIEW LIST</span></button>
 <div class="panel">
 <a class="site" href="https://fastdl.app/en5IW" rel="noopener noreferrer" target="_blank"><span>FastDL<small>fastdl.app</small></span><span class="arrow">↗</span></a>
 <a class="site" href="https://indown.io/en5" rel="noopener noreferrer" target="_blank"><span>InDown<small>indown.io</small></span><span class="arrow">↗</span></a>
@@ -178,7 +191,7 @@ body{padding:12px}
 <a class="site" href="https://www.snapgram.io/" rel="noopener noreferrer" target="_blank"><span>SnapGram<small>snapgram.io</small></span><span class="arrow">↗</span></a>
 </div>
 </section><section class="group">
-<button class="category" onclick="toggle(this)" style="--glow:#F15BB5" type="button">📘<h2>Facebook Video Downloader</h2><p>Download Facebook videos with these tools.</p><span class="count">02 WEBSITES · VIEW LIST</span></button>
+<button class="category" onclick="toggle(this)" style="--glow:#FF4FA3" type="button">📘<h2>Facebook Video Downloader</h2><p>Download Facebook videos with these tools.</p><span class="count">02 WEBSITES · VIEW LIST</span></button>
 <div class="panel">
 <a class="site" href="https://www.fvidgo.com/" rel="noopener noreferrer" target="_blank"><span>FVidGo<small>fvidgo.com</small></span><span class="arrow">↗</span></a>
 <a class="site" href="https://fget.io/" rel="noopener noreferrer" target="_blank"><span>FGet<small>fget.io</small></span><span class="arrow">↗</span></a>
@@ -191,12 +204,12 @@ body{padding:12px}
 <a class="site" href="https://pindown.io/en1" rel="noopener noreferrer" target="_blank"><span>PinDown<small>pindown.io</small></span><span class="arrow">↗</span></a>
 </div>
 </section><section class="group">
-<button class="category" onclick="toggle(this)" style="--glow:#D62828" type="button">🎵<h2>Spotify Music Downloader</h2><p>Spotify music download tool.</p><span class="count">01 WEBSITE · VIEW LIST</span></button>
+<button class="category" onclick="toggle(this)" style="--glow:#E63946" type="button">🎵<h2>Spotify Music Downloader</h2><p>Spotify music download tool.</p><span class="count">01 WEBSITE · VIEW LIST</span></button>
 <div class="panel">
 <a class="site" href="https://spotdown.org/en2" rel="noopener noreferrer" target="_blank"><span>SpotDown<small>spotdown.org</small></span><span class="arrow">↗</span></a>
 </div>
 </section><section class="group">
-<button class="category" onclick="toggle(this)" style="--glow:#9B5DE5" type="button">🖼️<h2>PNG Images</h2><p>PNG images and transparent graphics.</p><span class="count">15 WEBSITES · VIEW LIST</span></button>
+<button class="category" onclick="toggle(this)" style="--glow:#8B5CF6" type="button">🖼️<h2>PNG Images</h2><p>PNG images and transparent graphics.</p><span class="count">15 WEBSITES · VIEW LIST</span></button>
 <div class="panel">
 <a class="site" href="https://www.pngwing.com/" rel="noopener noreferrer" target="_blank"><span>PNGWing<small>pngwing.com</small></span><span class="arrow">↗</span></a>
 <a class="site" href="https://www.pngegg.com/" rel="noopener noreferrer" target="_blank"><span>PNGEgg<small>pngegg.com</small></span><span class="arrow">↗</span></a>
@@ -215,31 +228,74 @@ body{padding:12px}
 <a class="site" href="https://lordicon.com/" rel="noopener noreferrer" target="_blank"><span>Lordicon<small>lordicon.com</small></span><span class="arrow">↗</span></a>
 </div>
 </section><section class="group">
-<button class="category" onclick="toggle(this)" style="--glow:#8AC926" type="button">✨<h2>PNG Image Mini Icons</h2><p>Mini icons, SVG icons and graphic resources.</p><span class="count">03 WEBSITES · VIEW LIST</span></button>
+<button class="category" onclick="toggle(this)" style="--glow:#16A6A1" type="button">✨<h2>PNG Image Mini Icons</h2><p>Mini icons, SVG icons and graphic resources.</p><span class="count">03 WEBSITES · VIEW LIST</span></button>
 <div class="panel">
 <a class="site" href="https://icons8.com/" rel="noopener noreferrer" target="_blank"><span>Icons8<small>icons8.com</small></span><span class="arrow">↗</span></a>
 <a class="site" href="https://www.flaticon.com/" rel="noopener noreferrer" target="_blank"><span>Flaticon<small>flaticon.com</small></span><span class="arrow">↗</span></a>
 <a class="site" href="https://www.svgrepo.com/" rel="noopener noreferrer" target="_blank"><span>SVG Repo<small>svgrepo.com</small></span><span class="arrow">↗</span></a>
 </div>
 </section><section class="group">
-<button class="category" onclick="toggle(this)" style="--glow:#FF595E" type="button">✂️<h2>Background Remover</h2><p>Remove image backgrounds easily.</p><span class="count">02 WEBSITES · VIEW LIST</span></button>
+<button class="category" onclick="toggle(this)" style="--glow:#FF7A00" type="button">✂️<h2>Background Remover</h2><p>Remove image backgrounds easily.</p><span class="count">02 WEBSITES · VIEW LIST</span></button>
 <div class="panel">
 <a class="site" href="https://www.photoroom.com/tools/background-remover" rel="noopener noreferrer" target="_blank"><span>PhotoRoom<small>photoroom.com · Background Remover</small></span><span class="arrow">↗</span></a>
 <a class="site" href="https://www.remove.bg/" rel="noopener noreferrer" target="_blank"><span>Remove.bg<small>remove.bg · Automatic Background Removal</small></span><span class="arrow">↗</span></a>
 </div>
 </section><section class="group">
-<button class="category" onclick="toggle(this)" style="--glow:#00E676" type="button">🎨<h2>Free Online Design Tools</h2><p>Free online tools for image editing and creative design.</p><span class="count">02 WEBSITES · VIEW LIST</span></button>
+<button class="category" onclick="toggle(this)" style="--glow:#F94144" type="button">🎨<h2>Free Online Design Tools</h2><p>Free online tools for image editing and creative design.</p><span class="count">02 WEBSITES · VIEW LIST</span></button>
 <div class="panel">
 <a class="site" href="https://www.photopea.com/" rel="noopener noreferrer" target="_blank"><span>Photopea<small>photopea.com</small></span><span class="arrow">↗</span></a>
 <a class="site" href="https://kleki.com/" rel="noopener noreferrer" target="_blank"><span>Kleki<small>kleki.com</small></span><span class="arrow">↗</span></a>
 </div>
+</section><section class="group graphic-design-main">
+<button class="category" onclick="toggle(this)" style="--glow:#C084FC" type="button">🎨<h2>Graphic Design</h2><p>Fonts, design inspiration, color palettes and stock images.</p><span class="count">04 SUBFOLDERS · VIEW LIST</span></button>
+<div class="panel graphic-design-panel">
+ <div class="gd-subfolder">
+  <button class="category gd-category" onclick="toggle(this)" style="--glow:#F472B6" type="button">🔤<h2>Fonts &amp; Typography</h2><p>Font libraries and typefaces.</p><span class="count">04 WEBSITES · VIEW LIST</span></button>
+  <div class="panel gd-links">
+   <a class="site" href="https://fonts.google.com/" rel="noopener noreferrer" target="_blank"><span>Google Fonts<small>fonts.google.com</small></span><span class="arrow">↗</span></a>
+   <a class="site" href="https://www.dafont.com/" rel="noopener noreferrer" target="_blank"><span>DaFont<small>dafont.com</small></span><span class="arrow">↗</span></a>
+   <a class="site" href="https://www.fontsquirrel.com/" rel="noopener noreferrer" target="_blank"><span>Font Squirrel<small>fontsquirrel.com</small></span><span class="arrow">↗</span></a>
+   <a class="site" href="https://www.fontshare.com/" rel="noopener noreferrer" target="_blank"><span>Fontshare<small>fontshare.com</small></span><span class="arrow">↗</span></a>
+  </div>
+ </div>
+ <div class="gd-subfolder">
+  <button class="category gd-category" onclick="toggle(this)" style="--glow:#FBBF24" type="button">💡<h2>Design Inspiration &amp; Ideas</h2><p>Creative portfolios, layouts and design references.</p><span class="count">05 WEBSITES · VIEW LIST</span></button>
+  <div class="panel gd-links">
+   <a class="site" href="https://www.behance.net/" rel="noopener noreferrer" target="_blank"><span>Behance<small>behance.net</small></span><span class="arrow">↗</span></a>
+   <a class="site" href="https://www.awwwards.com/" rel="noopener noreferrer" target="_blank"><span>Awwwards<small>awwwards.com</small></span><span class="arrow">↗</span></a>
+   <a class="site" href="https://www.pinterest.com/" rel="noopener noreferrer" target="_blank"><span>Pinterest<small>pinterest.com</small></span><span class="arrow">↗</span></a>
+   <a class="site" href="https://dribbble.com/" rel="noopener noreferrer" target="_blank"><span>Dribbble<small>dribbble.com</small></span><span class="arrow">↗</span></a>
+   <a class="site" href="https://mobbin.com/" rel="noopener noreferrer" target="_blank"><span>Mobbin<small>mobbin.com</small></span><span class="arrow">↗</span></a>
+  </div>
+ </div>
+ <div class="gd-subfolder">
+  <button class="category gd-category" onclick="toggle(this)" style="--glow:#34D399" type="button">🌈<h2>Color Palettes &amp; Generators</h2><p>Color combinations and palette inspiration.</p><span class="count">05 WEBSITES · VIEW LIST</span></button>
+  <div class="panel gd-links">
+   <a class="site" href="https://coolors.co/" rel="noopener noreferrer" target="_blank"><span>Coolors<small>coolors.co</small></span><span class="arrow">↗</span></a>
+   <a class="site" href="https://colorhunt.co/" rel="noopener noreferrer" target="_blank"><span>Color Hunt<small>colorhunt.co</small></span><span class="arrow">↗</span></a>
+   <a class="site" href="https://www.khroma.co/" rel="noopener noreferrer" target="_blank"><span>Khroma<small>khroma.co</small></span><span class="arrow">↗</span></a>
+   <a class="site" href="https://flatuicolors.com/" rel="noopener noreferrer" target="_blank"><span>Flat UI Colors<small>flatuicolors.com</small></span><span class="arrow">↗</span></a>
+   <a class="site" href="https://paletton.com/" rel="noopener noreferrer" target="_blank"><span>Paletton<small>paletton.com</small></span><span class="arrow">↗</span></a>
+  </div>
+ </div>
+ <div class="gd-subfolder">
+  <button class="category gd-category" onclick="toggle(this)" style="--glow:#60A5FA" type="button">📷<h2>Stock Photos &amp; Images</h2><p>Stock photography and image resources.</p><span class="count">05 WEBSITES · VIEW LIST</span></button>
+  <div class="panel gd-links">
+   <a class="site" href="https://unsplash.com/" rel="noopener noreferrer" target="_blank"><span>Unsplash<small>unsplash.com</small></span><span class="arrow">↗</span></a>
+   <a class="site" href="https://www.pexels.com/" rel="noopener noreferrer" target="_blank"><span>Pexels<small>pexels.com</small></span><span class="arrow">↗</span></a>
+   <a class="site" href="https://pixabay.com/" rel="noopener noreferrer" target="_blank"><span>Pixabay<small>pixabay.com</small></span><span class="arrow">↗</span></a>
+   <a class="site" href="https://www.freepik.com/" rel="noopener noreferrer" target="_blank"><span>Freepik<small>freepik.com</small></span><span class="arrow">↗</span></a>
+   <a class="site" href="https://www.freeimages.com/" rel="noopener noreferrer" target="_blank"><span>FreeImages<small>freeimages.com</small></span><span class="arrow">↗</span></a>
+  </div>
+ </div>
+</div>
 </section><section class="group">
-<button class="category" onclick="toggle(this)" style="--glow:#00B4A2" type="button">🔄<h2>Photo and Video Format Changer</h2><p>Convert photos and videos into different formats.</p><span class="count">01 WEBSITE · VIEW LIST</span></button>
+<button class="category" onclick="toggle(this)" style="--glow:#2DD4BF" type="button">🔄<h2>Photo and Video Format Changer</h2><p>Convert photos and videos into different formats.</p><span class="count">01 WEBSITE · VIEW LIST</span></button>
 <div class="panel">
 <a class="site" href="https://cloudconvert.com/mp4-converter" rel="noopener noreferrer" target="_blank"><span>CloudConvert<small>cloudconvert.com · Video Format Converter</small></span><span class="arrow">↗</span></a>
 </div>
 </section><section class="group">
-<button class="category" onclick="toggle(this)" style="--glow:#F77F00" type="button">🤖<h2>Free AI Generator Web</h2><p>AI image, cartoon, video, poster and creative tools.</p><span class="count">09 WEBSITES · VIEW LIST</span></button>
+<button class="category" onclick="toggle(this)" style="--glow:#A855F7" type="button">🤖<h2>Free AI Generator Web</h2><p>AI image, cartoon, video, poster and creative tools.</p><span class="count">09 WEBSITES · VIEW LIST</span></button>
 <div class="panel">
 <a class="site" href="https://www.craiyon.com/en" rel="noopener noreferrer" target="_blank"><span>Craiyon<small>AI Cartoon &amp; Image Generating Tool</small></span><span class="arrow">↗</span></a>
 <a class="site" href="https://www.vmaker.com/" rel="noopener noreferrer" target="_blank"><span>Vmaker<small>Video and Image Generating</small></span><span class="arrow">↗</span></a>
@@ -252,14 +308,14 @@ body{padding:12px}
 <a class="site" href="https://delphi.tools/" rel="noopener noreferrer" target="_blank"><span>Delphi Tools<small>AI Tools Available</small></span><span class="arrow">↗</span></a>
 </div>
 </section><section class="group">
-<button class="category" onclick="toggle(this)" style="--glow:#6C63FF" type="button">✍️<h2>AI Prompt Generator</h2><p>AI image prompt generators and prompt creation tools.</p><span class="count">03 WEBSITES · VIEW LIST</span></button>
+<button class="category" onclick="toggle(this)" style="--glow:#D946EF" type="button">✍️<h2>AI Prompt Generator</h2><p>AI image prompt generators and prompt creation tools.</p><span class="count">03 WEBSITES · VIEW LIST</span></button>
 <div class="panel">
 <a class="site" href="https://generateprompt.net/" rel="noopener noreferrer" target="_blank"><span>GeneratePrompt<small>generateprompt.net</small></span><span class="arrow">↗</span></a>
 <a class="site" href="https://faymas.in/prompts/ai-image-prompts" rel="noopener noreferrer" target="_blank"><span>Faymas AI Image Prompts<small>faymas.in · AI Image Prompts</small></span><span class="arrow">↗</span></a>
 <a class="site" href="https://imagetoprompt.org/ai-prompt-generator" rel="noopener noreferrer" target="_blank"><span>Image to Prompt<small>imagetoprompt.org · AI Prompt Generator</small></span><span class="arrow">↗</span></a>
 </div>
 </section><section class="group">
-<button class="category" onclick="toggle(this)" style="--glow:#277DA1" type="button">🧊<h2>3D Model Generator</h2><p>3D model creation and image-to-3D tools.</p><span class="count">04 WEBSITES · VIEW LIST</span></button>
+<button class="category" onclick="toggle(this)" style="--glow:#3B82F6" type="button">🧊<h2>3D Model Generator</h2><p>3D model creation and image-to-3D tools.</p><span class="count">04 WEBSITES · VIEW LIST</span></button>
 <div class="panel">
 <a class="site" href="https://3dsvg.design/" rel="noopener noreferrer" target="_blank"><span>3DSVG Design<small>3dsvg.design</small></span><span class="arrow">↗</span></a>
 <a class="site" href="https://upsampler.com/free-image-to-3d-no-signup" rel="noopener noreferrer" target="_blank"><span>Upsampler Image to 3D<small>upsampler.com · Free Image to 3D</small></span><span class="arrow">↗</span></a>
@@ -267,18 +323,18 @@ body{padding:12px}
 <a class="site" href="https://upsampler.com/free-image-to-3d-no-signup" rel="noopener noreferrer" target="_blank"><span>Upsampler Image to 3D (2)<small>upsampler.com · Free Image to 3D</small></span><span class="arrow">↗</span></a>
 </div>
 </section><section class="group">
-<button class="category" onclick="toggle(this)" style="--glow:#F9C74F" type="button">🎞️<h2>Video Clips</h2><p>Explore video clips and scene collections.</p><span class="count">01 WEBSITE · VIEW LIST</span></button>
+<button class="category" onclick="toggle(this)" style="--glow:#F59E0B" type="button">🎞️<h2>Video Clips</h2><p>Explore video clips and scene collections.</p><span class="count">01 WEBSITE · VIEW LIST</span></button>
 <div class="panel">
 <a class="site" href="https://yarn.co/" rel="noopener noreferrer" target="_blank"><span>YARN<small>yarn.co</small></span><span class="arrow">↗</span></a>
 </div>
 </section><section class="group">
-<button class="category" onclick="toggle(this)" style="--glow:#00A878" type="button">🔊<h2>Free SFX Websites</h2><p>Sound effects and audio clips.</p><span class="count">02 WEBSITES · VIEW LIST</span></button>
+<button class="category" onclick="toggle(this)" style="--glow:#14B8A6" type="button">🔊<h2>Free SFX Websites</h2><p>Sound effects and audio clips.</p><span class="count">02 WEBSITES · VIEW LIST</span></button>
 <div class="panel">
 <a class="site" href="https://pixabay.com/sound-effects/" rel="noopener noreferrer" target="_blank"><span>Pixabay Sound Effects<small>pixabay.com</small></span><span class="arrow">↗</span></a>
 <a class="site" href="https://www.myinstants.com/en/index/in/" rel="noopener noreferrer" target="_blank"><span>MyInstants India<small>myinstants.com</small></span><span class="arrow">↗</span></a>
 </div>
 </section><section class="group">
-<button class="category" onclick="toggle(this)" style="--glow:#FF8C42" type="button">🎞️<h2>Free Online Video Editors</h2><p>Online video editing tools.</p><span class="count">06 WEBSITES · VIEW LIST</span></button>
+<button class="category" onclick="toggle(this)" style="--glow:#FB7185" type="button">🎞️<h2>Free Online Video Editors</h2><p>Online video editing tools.</p><span class="count">06 WEBSITES · VIEW LIST</span></button>
 <div class="panel">
 <a class="site" href="https://opencut.fun/" rel="noopener noreferrer" target="_blank"><span>OpenCut<small>opencut.fun</small></span><span class="arrow">↗</span></a>
 <a class="site" href="https://cutline.page/" rel="noopener noreferrer" target="_blank"><span>Cutline<small>cutline.page</small></span><span class="arrow">↗</span></a>
@@ -339,12 +395,24 @@ Created by
 </audio>
 <button aria-label="Turn background music on or off" class="music-toggle" id="musicToggle" type="button">♫ MUSIC OFF</button>
 <script>
-/* CATEGORY OPEN / CLOSE */
+/* CATEGORY OPEN / CLOSE — click the same card again to collapse it */
 function toggle(button){
  const panel=button.parentElement.querySelector(":scope > .panel");
+ if(!panel)return;
  const isOpen=panel.classList.contains("open");
- document.querySelectorAll(".panel").forEach(p=>p.classList.remove("open"));
- if(!isOpen){panel.classList.add("open");}
+
+ // Graphic Design subfolders: close only sibling subfolders, keep the parent open.
+ const subfolder=button.closest(".gd-subfolder");
+ if(subfolder){
+  const parent=subfolder.parentElement;
+  parent.querySelectorAll(":scope > .gd-subfolder > .panel").forEach(p=>p.classList.remove("open"));
+  if(!isOpen)panel.classList.add("open");
+  return;
+ }
+
+ // Main categories: close other main category panels, then toggle the clicked one.
+ document.querySelectorAll(".group > .panel").forEach(p=>p.classList.remove("open"));
+ if(!isOpen)panel.classList.add("open");
 }
 
 /* WEBSITE SEARCH + CLICKABLE LIVE RESULTS */
@@ -356,18 +424,20 @@ function searchSites(){
  const matches=[];
  allLinks.forEach(link=>{
   const group=link.closest(".group");
-  const category=group?.querySelector(".category");
-  const categoryText=category?.innerText.toLowerCase()||"";
+  const subfolder=link.closest(".gd-subfolder");
+  const category=subfolder?.querySelector(":scope > .gd-category")||group?.querySelector(":scope > .category");
+  const categoryText=(category?.innerText||"")+" "+(group?.querySelector(":scope > .category h2")?.innerText||"");
   const searchable=(link.innerText+" "+categoryText).toLowerCase();
   const match=!q||searchable.includes(q);
   const row=link.closest(".site-row");
   if(row) row.style.display=match?"flex":"none";
   else link.style.display=match?"flex":"none";
   if(match&&q) matches.push({link,category:category?.querySelector("h2")?.innerText.trim()||"Website"});
+  if(subfolder){const subPanel=subfolder.querySelector(":scope > .panel");if(q&&match)subPanel?.classList.add("open");else if(!q)subPanel?.classList.remove("open");}
  });
 
- document.querySelectorAll(".group").forEach(group=>{
-  const panel=group.querySelector(".panel");
+ document.querySelectorAll("body > .group").forEach(group=>{
+  const panel=group.querySelector(":scope > .panel");
   const visible=Array.from(panel.querySelectorAll(".site")).some(link=>{
    const row=link.closest(".site-row");
    return (row?row.style.display!=="none":link.style.display!=="none");
@@ -538,7 +608,7 @@ rkMusic.addEventListener("pause",function(){
  }catch(error){favorites=[];}
  function saveFavorites(){try{localStorage.setItem(STORAGE_KEY,JSON.stringify(favorites));}catch(error){}}
  function getCategory(link){
-  return link.closest(".group")?.querySelector(".category h2")?.textContent.trim()||"Website";
+  return link.closest(".gd-subfolder")?.querySelector(":scope > .gd-category h2")?.textContent.trim()||link.closest(".group")?.querySelector(":scope > .category h2")?.textContent.trim()||"Website";
  }
  function refreshButtons(){
   document.querySelectorAll(".site-row").forEach(row=>{
@@ -601,7 +671,7 @@ rkMusic.addEventListener("pause",function(){
 
 /* CATEGORY CARD ORDER + LOCK STATE (persisted on this device) */
 (function(){
- const STORAGE_KEY="rkMediaUsefulWebsitesCategoryLayout_v2";
+ const STORAGE_KEY="rkMediaUsefulWebsitesCategoryLayout_v3";
  const container=document.querySelector(".section-title + .group")?.parentElement;
  const groups=()=>Array.from(document.querySelectorAll(".group")).filter(group=>group.querySelector(":scope > .category")&&group.querySelector(":scope > .panel"));
  let draggedGroup=null;
