@@ -115,6 +115,21 @@ body{padding:12px}
 .search-result small{display:block;margin-top:4px;color:#aaa1ba;font-size:12px;overflow-wrap:anywhere}
 .search-no-results{padding:15px;color:#c9bfd8;font-size:14px}
 
+
+/* CATEGORY CARD DRAG + POSITION LOCK */
+.group{position:relative}
+.category{position:relative;padding-right:104px;cursor:grab;user-select:none;-webkit-user-select:none}
+.category:active{cursor:grabbing}
+.category.dragging{opacity:.48;transform:scale(.99)}
+.group.drag-over .category{outline:2px dashed var(--glow);outline-offset:4px}
+.group.is-locked .category{cursor:default;user-select:none;-webkit-user-select:none}
+.category-lock{position:absolute;z-index:5;top:13px;right:13px;min-width:38px;height:38px;padding:0 9px;border:1px solid var(--glow);border-radius:12px;background:#130d22;color:#fff;font-size:18px;cursor:pointer;box-shadow:0 0 10px color-mix(in srgb,var(--glow) 45%,transparent)}
+.category-lock:hover{background:#ffffff20;transform:translateY(-1px)}
+.category-lock[aria-pressed="true"]{background:color-mix(in srgb,var(--glow) 22%,#130d22);box-shadow:0 0 15px var(--glow)}
+.drag-handle{position:absolute;right:60px;top:18px;display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border:1px solid #ffffff30;border-radius:9px;color:#e8d8ff;font-size:19px;line-height:1;cursor:grab;pointer-events:auto;touch-action:none;z-index:4}
+.category-reordering{overscroll-behavior:contain}.category.dragging{opacity:.65;outline:2px dashed var(--glow)}.group.drag-over{outline:2px solid var(--glow);border-radius:16px}\n.category:focus-visible,.category-lock:focus-visible{outline:2px solid #fff;outline-offset:4px}
+@media(max-width:600px){.category{padding-right:100px}.category-lock{top:10px;right:10px}.drag-handle{top:15px;right:55px}}
+
 </style>
 </head>
 <body>
@@ -153,6 +168,32 @@ body{padding:12px}
 <a class="site" href="https://pk.vidssave.com/youtube-video-download" rel="noopener noreferrer" target="_blank"><span>Vidssave<small>vidssave.com</small></span><span class="arrow">↗</span></a>
 <a class="site" href="https://vidpickr.com/" rel="noopener noreferrer" target="_blank"><span>VidPickr<small>vidpickr.com</small></span><span class="arrow">↗</span></a>
 <a class="site" href="https://www.snapyt.app/" rel="noopener noreferrer" target="_blank"><span>SnapYT<small>snapyt.app</small></span><span class="arrow">↗</span></a>
+</div>
+</section>
+<section class="group">
+<button class="category" onclick="toggle(this)" style="--glow:#FF006E" type="button">📌<h2>Pinterest video downloader</h2><p>Download videos from Pinterest.</p><span class="count">03 WEBSITES · VIEW LIST</span></button>
+<div class="panel">
+<a class="site" href="https://klickpin.com/en5" rel="noopener noreferrer" target="_blank"><span>KlickPin<small>klickpin.com</small></span><span class="arrow">↗</span></a>
+<a class="site" href="https://ssspin.io/" rel="noopener noreferrer" target="_blank"><span>SSSpin<small>ssspin.io</small></span><span class="arrow">↗</span></a>
+<a class="site" href="https://pindown.io/en1" rel="noopener noreferrer" target="_blank"><span>PinDown<small>pindown.io</small></span><span class="arrow">↗</span></a>
+</div>
+</section>
+<section class="group">
+<button class="category" onclick="toggle(this)" style="--glow:#00E676" type="button">🎨<h2>Free Online Design Tools</h2><p>Free online tools for image editing and creative design.</p><span class="count">02 WEBSITES · VIEW LIST</span></button>
+<div class="panel">
+<a class="site" href="https://www.photopea.com/" rel="noopener noreferrer" target="_blank"><span>Photopea<small>photopea.com</small></span><span class="arrow">↗</span></a>
+<a class="site" href="https://kleki.com/" rel="noopener noreferrer" target="_blank"><span>Kleki<small>kleki.com</small></span><span class="arrow">↗</span></a>
+</div>
+</section>
+<section class="group">
+<button class="category" onclick="toggle(this)" style="--glow:#FF8C42" type="button">🎞️<h2>Free Online Video Editors</h2><p>Online video editing tools.</p><span class="count">06 WEBSITES · VIEW LIST</span></button>
+<div class="panel">
+<a class="site" href="https://opencut.fun/" rel="noopener noreferrer" target="_blank"><span>OpenCut<small>opencut.fun</small></span><span class="arrow">↗</span></a>
+<a class="site" href="https://cutline.page/" rel="noopener noreferrer" target="_blank"><span>Cutline<small>cutline.page</small></span><span class="arrow">↗</span></a>
+<a class="site" href="https://wide.video/" rel="noopener noreferrer" target="_blank"><span>wide.video<small>wide.video</small></span><span class="arrow">↗</span></a>
+<a class="site" href="https://app.cutwright.cc/" rel="noopener noreferrer" target="_blank"><span>CutWright<small>app.cutwright.cc</small></span><span class="arrow">↗</span></a>
+<a class="site" href="https://donacgreece.github.io/Edituno/" rel="noopener noreferrer" target="_blank"><span>Edituno<small>donacgreece.github.io/Edituno</small></span><span class="arrow">↗</span></a>
+<a class="site" href="https://reframe-os.netlify.app/" rel="noopener noreferrer" target="_blank"><span>Reframe<small>reframe-os.netlify.app</small></span><span class="arrow">↗</span></a>
 </div>
 </section>
 <section class="group">
@@ -317,7 +358,7 @@ Created by
 <script>
 /* CATEGORY OPEN / CLOSE */
 function toggle(button){
- const panel=button.nextElementSibling;
+ const panel=button.parentElement.querySelector(":scope > .panel");
  const isOpen=panel.classList.contains("open");
  document.querySelectorAll(".panel").forEach(p=>p.classList.remove("open"));
  if(!isOpen){panel.classList.add("open");}
@@ -572,6 +613,169 @@ rkMusic.addEventListener("pause",function(){
   link.parentNode.insertBefore(row,link);row.append(link,makeFavoriteButton(link));
  });
  renderFavorites();refreshButtons();
+})();
+
+
+/* CATEGORY CARD ORDER + LOCK STATE (persisted on this device) */
+(function(){
+ const STORAGE_KEY="rkMediaUsefulWebsitesCategoryLayout_v1";
+ const container=document.querySelector(".section-title + .group")?.parentElement;
+ const groups=()=>Array.from(document.querySelectorAll(".group")).filter(group=>group.querySelector(":scope > .category")&&group.querySelector(":scope > .panel"));
+ let draggedGroup=null;
+ function makeId(group,index){
+  const title=group.querySelector(".category h2")?.textContent.trim()||"category";
+  const firstHref=group.querySelector(".panel a.site")?.getAttribute("href")||String(index);
+  let host="item";
+  try{host=new URL(firstHref,location.href).hostname.replace(/^www\./,"");}catch(error){}
+  const slug=(title+"-"+host).toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
+  return "rk-category-"+slug;
+ }
+ function readState(){
+  try{const value=JSON.parse(localStorage.getItem(STORAGE_KEY)||"{}");return value&&typeof value==="object"?value:{ };}catch(error){return {};}
+ }
+ function saveState(){
+  try{
+   const current=groups();
+   const locked={};current.forEach(group=>locked[group.dataset.categoryId]=group.classList.contains("is-locked"));
+   localStorage.setItem(STORAGE_KEY,JSON.stringify({order:current.map(group=>group.dataset.categoryId),locked}));
+  }catch(error){}
+ }
+ function updateLockButton(group){
+  const button=group.querySelector(":scope > .category-lock");
+  if(!button)return;
+  const locked=group.classList.contains("is-locked");
+  button.textContent=locked?"🔒":"🔓";
+  button.setAttribute("aria-pressed",locked?"true":"false");
+  button.setAttribute("aria-label",locked?"Unlock category position":"Lock category position");
+  button.title=locked?"Unlock position":"Lock position";
+ }
+ function placeInSavedOrder(all,savedOrder){
+  if(!Array.isArray(savedOrder))return;
+  const byId=new Map(all.map(group=>[group.dataset.categoryId,group]));
+  const ordered=[];
+  savedOrder.forEach(id=>{const group=byId.get(id);if(group&&!ordered.includes(group))ordered.push(group);});
+  all.forEach(group=>{if(!ordered.includes(group))ordered.push(group);});
+  const parent=all[0]?.parentElement;
+  const anchor=all[all.length-1]?.nextElementSibling||null;
+  if(!parent)return;
+  ordered.forEach(group=>parent.insertBefore(group,anchor));
+ }
+ function applyUnlockedOrder(moving,target,after){
+  const all=groups();
+  if(!moving||!target||moving===target||moving.classList.contains("is-locked")||target.classList.contains("is-locked"))return;
+  const unlocked=all.filter(group=>!group.classList.contains("is-locked"));
+  const from=unlocked.indexOf(moving);
+  if(from<0)return;
+  unlocked.splice(from,1);
+  let to=unlocked.indexOf(target);
+  if(to<0)return;
+  if(after)to+=1;
+  unlocked.splice(to,0,moving);
+  const desired=all.slice();
+  let cursor=0;
+  for(let index=0;index<desired.length;index++){
+   if(!desired[index].classList.contains("is-locked"))desired[index]=unlocked[cursor++];
+  }
+  const parent=all[0]?.parentElement;
+  const anchor=all[all.length-1]?.nextElementSibling||null;
+  if(parent)desired.forEach(group=>parent.insertBefore(group,anchor));
+  saveState();
+ }
+ const state=readState();
+ const initial=groups();
+ initial.forEach((group,index)=>{
+  group.dataset.categoryId=makeId(group,index);
+  if(state.locked&&state.locked[group.dataset.categoryId])group.classList.add("is-locked");
+ });
+ placeInSavedOrder(initial,state.order);
+ document.addEventListener("pointermove",event=>{
+  if(!draggedGroup)return;
+  if(event.cancelable)event.preventDefault();
+  const under=document.elementFromPoint(event.clientX,event.clientY);
+  const target=under?.closest(".group");
+  groups().forEach(item=>item.classList.toggle("drag-over",!!target&&item===target&&item!==draggedGroup&&!item.classList.contains("is-locked")));
+ },{passive:false});
+ document.addEventListener("pointerup",event=>{
+  if(!draggedGroup)return;
+  const moving=draggedGroup;
+  const under=document.elementFromPoint(event.clientX,event.clientY);
+  const target=under?.closest(".group");
+  if(target&&target!==moving&&!target.classList.contains("is-locked")){
+   const rect=target.getBoundingClientRect();
+   applyUnlockedOrder(moving,target,event.clientY>rect.top+rect.height/2);
+  }
+  moving.classList.remove("dragging");
+  groups().forEach(item=>item.classList.remove("drag-over"));
+  document.body.classList.remove("category-reordering");
+  draggedGroup=null;
+ });
+ document.addEventListener("pointercancel",()=>{
+  if(!draggedGroup)return;
+  draggedGroup.classList.remove("dragging");
+  groups().forEach(item=>item.classList.remove("drag-over"));
+  document.body.classList.remove("category-reordering");
+  draggedGroup=null;
+ });
+ groups().forEach(group=>{
+  const category=group.querySelector(":scope > .category");
+  const panel=group.querySelector(":scope > .panel");
+  if(!category||!panel)return;
+  category.removeAttribute("draggable");
+  if(!category.querySelector(".drag-handle")){
+   const handle=document.createElement("span");
+   handle.className="drag-handle";handle.textContent="⠿";handle.setAttribute("aria-hidden","true");
+   category.appendChild(handle);
+  }
+  const lock=document.createElement("button");
+  lock.type="button";lock.className="category-lock";
+  lock.addEventListener("click",event=>{
+   event.preventDefault();event.stopPropagation();
+   group.classList.toggle("is-locked");
+   updateLockButton(group);saveState();
+  });
+  group.insertBefore(lock,panel);
+  updateLockButton(group);
+  const handle=category.querySelector(".drag-handle");
+  // Touch + mouse drag: track pointer globally so mobile browsers keep delivering movement.
+  handle.style.touchAction="none";
+  handle.addEventListener("pointerdown",event=>{
+   if(group.classList.contains("is-locked"))return;
+   event.preventDefault();
+   event.stopPropagation();
+   draggedGroup=group;
+   category.classList.add("dragging");
+   document.body.classList.add("category-reordering");
+  });
+  category.addEventListener("dragstart",event=>{
+   if(group.classList.contains("is-locked")){event.preventDefault();return;}
+   draggedGroup=group;
+   category.classList.add("dragging");
+   if(event.dataTransfer){event.dataTransfer.effectAllowed="move";event.dataTransfer.setData("text/plain",group.dataset.categoryId);}
+  });
+  category.addEventListener("dragend",()=>{
+   category.classList.remove("dragging");
+   groups().forEach(item=>item.classList.remove("drag-over"));
+   draggedGroup=null;
+  });
+  group.addEventListener("dragover",event=>{
+   if(!draggedGroup||draggedGroup===group||group.classList.contains("is-locked"))return;
+   event.preventDefault();
+   if(event.dataTransfer)event.dataTransfer.dropEffect="move";
+   groups().forEach(item=>item.classList.toggle("drag-over",item===group));
+  });
+  group.addEventListener("dragleave",event=>{
+   if(!group.contains(event.relatedTarget))group.classList.remove("drag-over");
+  });
+  group.addEventListener("drop",event=>{
+   if(!draggedGroup||draggedGroup===group||group.classList.contains("is-locked"))return;
+   event.preventDefault();
+   const rect=group.getBoundingClientRect();
+   const after=event.clientY>rect.top+rect.height/2;
+   applyUnlockedOrder(draggedGroup,group,after);
+   groups().forEach(item=>item.classList.remove("drag-over"));
+  });
+ });
+ saveState();
 })();
 
 </script>
